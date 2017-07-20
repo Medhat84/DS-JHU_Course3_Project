@@ -14,7 +14,7 @@ db <- rbind(train, test)
 names(db) <- c("activity", "subject", as.character(features[,2]))
 db[,1] <- factor(db[,1], levels = activities[,1], labels = activities[,2])
 
-meanstd <- db[ , c(1, 2, which(grepl("mean|std", names(db))))]
+meanstd <- db[ , c(1, 2, which(grepl("mean\\(|std\\(", names(db))))]
 
 library(dplyr)
 dset <- tbl_df(meanstd)
