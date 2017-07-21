@@ -17,9 +17,12 @@ db <- rbind(train, test)
 names(db) <- c("activity", "subject", as.character(features[,2]))
 db[,1] <- factor(db[,1], levels = activities[,1], labels = activities[,2])
 
-## Getting only mean & standard deviation measurements & correcting names of some columns
+## Getting only mean & standard deviation measurements & correcting names of columns
 meanstd <- db[ , c(1, 2, which(grepl("mean\\(|std\\(", names(db))))]
 names(meanstd) <- sub("BodyBody","Body",names(meanstd))
+names(meanstd) <- sub("^t","time",names(meanstd))
+names(meanstd) <- sub("^f","freq",names(meanstd))
+names(meanstd) <- sub("\\(\\)","",names(meanstd))
 
 ## Grouping by activity then subject, getting mean & exporting the result tidy dataset
 library(dplyr)
