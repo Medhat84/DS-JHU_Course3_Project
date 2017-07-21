@@ -13,6 +13,6 @@ This is the project for getting and cleaning data course @ JHU on coursera.
 - Training & test data have been merged together to form one dataset with the corresponding labels for activities & subjects.
 - Feautures names are assigned to columns(variables) and activity names have replaced the numeric values representing activities.
 - All variables are excluded from dataset except for mean & standard deviation of measurements.
-- Some mistakes are noticed in variable names. So, they have been corrected.
+- Some modifications have been done in variable names.
 - Dataset have been grouped by activity then by subject and summarized by the mean values for each of the 66 variables.
 - Dataset has been exported to a text file.  
